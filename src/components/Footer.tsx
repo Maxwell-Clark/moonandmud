@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="bg-brown text-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
           {/* Brand */}
           <div className="md:col-span-2">
             <Image
@@ -69,20 +69,69 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* Shop Categories */}
+          <div>
+            <h4 className="font-display text-lg font-semibold text-gold mb-4">
+              Shop
+            </h4>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  href="/shop"
+                  className="text-cream/70 hover:text-gold transition-colors font-medium"
+                >
+                  All Products
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/shop?category=mugs"
+                  className="text-cream/70 hover:text-gold transition-colors"
+                >
+                  Mugs
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/shop?category=bowls"
+                  className="text-cream/70 hover:text-gold transition-colors"
+                >
+                  Bowls
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/shop?category=vases"
+                  className="text-cream/70 hover:text-gold transition-colors"
+                >
+                  Vases
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/shop?category=plates"
+                  className="text-cream/70 hover:text-gold transition-colors"
+                >
+                  Plates
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/shop?category=planters"
+                  className="text-cream/70 hover:text-gold transition-colors"
+                >
+                  Planters
+                </Link>
+              </li>
+            </ul>
+          </div>
+
           {/* Quick Links */}
           <div>
             <h4 className="font-display text-lg font-semibold text-cream mb-4">
               Quick Links
             </h4>
             <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/shop"
-                  className="text-cream/70 hover:text-gold transition-colors"
-                >
-                  Shop All
-                </Link>
-              </li>
               <li>
                 <Link
                   href="/#about"

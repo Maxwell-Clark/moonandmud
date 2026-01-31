@@ -18,23 +18,23 @@ export default function Hero() {
               your home.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <Link href="/shop" className="btn-primary text-center">
+              <Link href="/shop" className="btn-primary text-center text-lg py-4 px-8 min-h-[56px] flex items-center justify-center">
                 Shop Collection
               </Link>
-              <Link href="#about" className="btn-outline text-center">
+              <Link href="#about" className="btn-outline text-center text-lg py-4 px-8 min-h-[56px] flex items-center justify-center">
                 Our Story
               </Link>
             </div>
           </div>
           <div className="relative">
             <div className="aspect-square bg-gradient-to-br from-gold/20 to-terracotta/20 rounded-full flex items-center justify-center">
-              <div className="w-3/4 h-3/4 bg-white rounded-full flex items-center justify-center shadow-2xl">
+              <div className="w-3/4 h-3/4 bg-white rounded-full flex items-center justify-center shadow-2xl overflow-hidden">
                 <Image
                   src="/images/MNMLogo.PNG"
                   alt="Moon & Mud Pottery"
                   width={300}
                   height={300}
-                  className="w-56 h-56 object-contain"
+                  className="w-56 h-56 object-contain rounded-full"
                 />
               </div>
             </div>

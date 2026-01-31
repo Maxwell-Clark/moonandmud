@@ -12,30 +12,32 @@ export default function CategoryFilter({
   onCategoryChange,
 }: CategoryFilterProps) {
   return (
-    <div className="flex flex-wrap gap-2">
-      <button
-        onClick={() => onCategoryChange('all')}
-        className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-          selectedCategory === 'all'
-            ? 'bg-gold text-white'
-            : 'bg-cream-muted text-brown hover:bg-gold/20'
-        }`}
-      >
-        All
-      </button>
-      {CATEGORIES.map((category) => (
+    <div className="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0 sm:overflow-visible">
+      <div className="flex gap-2 pb-2 sm:pb-0 sm:flex-wrap min-w-max sm:min-w-0">
         <button
-          key={category}
-          onClick={() => onCategoryChange(category)}
-          className={`px-4 py-2 rounded-full text-sm font-medium transition-colors capitalize ${
-            selectedCategory === category
+          onClick={() => onCategoryChange('all')}
+          className={`px-3 py-2 sm:px-4 rounded-full text-sm font-medium transition-colors whitespace-nowrap min-h-[44px] flex items-center ${
+            selectedCategory === 'all'
               ? 'bg-gold text-white'
               : 'bg-cream-muted text-brown hover:bg-gold/20'
           }`}
         >
-          {category}
+          All
         </button>
-      ))}
+        {CATEGORIES.map((category) => (
+          <button
+            key={category}
+            onClick={() => onCategoryChange(category)}
+            className={`px-3 py-2 sm:px-4 rounded-full text-sm font-medium transition-colors capitalize whitespace-nowrap min-h-[44px] flex items-center ${
+              selectedCategory === category
+                ? 'bg-gold text-white'
+                : 'bg-cream-muted text-brown hover:bg-gold/20'
+            }`}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }

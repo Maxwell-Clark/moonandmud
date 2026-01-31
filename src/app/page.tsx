@@ -32,9 +32,73 @@ export default async function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <Link href="/shop" className="btn-outline">
+            <Link href="/shop" className="btn-primary">
               View All Products
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Browse by Category Section */}
+      <section className="py-16 md:py-24 bg-cream-dark">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-brown mb-4">
+              Browse by Category
+            </h2>
+            <p className="text-brown/70 max-w-2xl mx-auto">
+              Find the perfect piece for your home, from everyday mugs to decorative vases.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {[
+              { name: 'Mugs', slug: 'mugs', icon: (
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8h1a4 4 0 110 8h-1M3 8h14v9a4 4 0 01-4 4H7a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3" />
+                </svg>
+              )},
+              { name: 'Bowls', slug: 'bowls', icon: (
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12c0 4.97 4.03 9 9 9s9-4.03 9-9H3z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12c0-1.1.9-2 2-2h14a2 2 0 012 2" />
+                </svg>
+              )},
+              { name: 'Vases', slug: 'vases', icon: (
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 3h6v2a3 3 0 01-3 3 3 3 0 01-3-3V3zM7.5 8c-.5 2-1 4-1 6 0 4 2.5 7 5.5 7s5.5-3 5.5-7c0-2-.5-4-1-6h-9z" />
+                </svg>
+              )},
+              { name: 'Plates', slug: 'plates', icon: (
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="9" strokeWidth={1.5} />
+                  <circle cx="12" cy="12" r="5" strokeWidth={1.5} />
+                </svg>
+              )},
+              { name: 'Planters', slug: 'planters', icon: (
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 3v5M9 8l3-3 3 3M5 12h14l-2 9H7l-2-9z" />
+                </svg>
+              )},
+              { name: 'Decorative', slug: 'decorative', icon: (
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                </svg>
+              )},
+            ].map((category) => (
+              <Link
+                key={category.slug}
+                href={`/shop?category=${category.slug}`}
+                className="group bg-cream rounded-xl p-6 text-center hover:bg-gold/10 hover:shadow-lg transition-all duration-300 border border-transparent hover:border-gold/20"
+              >
+                <div className="w-16 h-16 mx-auto mb-3 bg-gold/10 rounded-full flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-white transition-all duration-300">
+                  {category.icon}
+                </div>
+                <h3 className="font-display text-lg font-semibold text-brown group-hover:text-gold transition-colors">
+                  {category.name}
+                </h3>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -45,7 +109,7 @@ export default async function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-brown mb-6">
-                The Story of Moon & Mud
+                The Story of Moon & Mud Pottery
               </h2>
               <div className="space-y-4 text-brown/70">
                 <p>
@@ -212,7 +276,7 @@ export default async function Home() {
                 ))}
               </div>
               <p className="text-cream/80 mb-4">
-                "The Crescent Moon Mug is absolutely perfect. It makes my
+                "The <Link href="/shop?category=mugs" className="text-gold hover:underline">Crescent Moon Mug</Link> is absolutely perfect. It makes my
                 morning coffee feel like a special ritual. You can feel the love
                 in every detail."
               </p>
@@ -233,7 +297,7 @@ export default async function Home() {
                 ))}
               </div>
               <p className="text-cream/80 mb-4">
-                "I bought the serving bowl for my wife and she was thrilled. The
+                "I bought the <Link href="/shop?category=bowls" className="text-gold hover:underline">serving bowl</Link> for my wife and she was thrilled. The
                 quality is outstanding and it's become the centerpiece of our
                 table."
               </p>
@@ -254,7 +318,7 @@ export default async function Home() {
                 ))}
               </div>
               <p className="text-cream/80 mb-4">
-                "The moon phase planter is even more beautiful in person. My
+                "The <Link href="/shop?category=planters" className="text-gold hover:underline">moon phase planter</Link> is even more beautiful in person. My
                 fiddle leaf fig looks so happy in its new home. Highly
                 recommend!"
               </p>
@@ -271,8 +335,8 @@ export default async function Home() {
             Join Our Community
           </h2>
           <p className="text-brown/70 mb-8">
-            Subscribe to receive updates on new collections, studio news, and
-            exclusive offers.
+            Be the first to know about new arrivals in our shop, limited edition pieces,
+            and exclusive subscriber-only offers.
           </p>
           <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <input

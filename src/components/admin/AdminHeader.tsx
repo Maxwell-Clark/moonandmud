@@ -18,7 +18,7 @@ export default function AdminHeader() {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-8">
             <Link href="/admin" className="font-display text-xl font-bold">
-              Moon & Mud Admin
+              Moon & Mud Pottery Admin
             </Link>
             <nav className="hidden md:flex space-x-4">
               <Link

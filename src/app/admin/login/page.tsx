@@ -39,7 +39,7 @@ export default function AdminLoginPage() {
       <div className="max-w-md w-full">
         <div className="bg-white rounded-lg shadow-lg p-8">
           <div className="text-center mb-8">
-            <h1 className="font-display text-3xl font-bold text-brown">Moon & Mud</h1>
+            <h1 className="font-display text-3xl font-bold text-brown">Moon & Mud Pottery</h1>
             <p className="text-brown/60 mt-2">Admin Portal</p>
           </div>
 

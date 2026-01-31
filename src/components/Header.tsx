@@ -1,10 +1,22 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+
+  // Focus management for mobile menu
+  useEffect(() => {
+    if (mobileMenuOpen && mobileMenuRef.current) {
+      const firstLink = mobileMenuRef.current.querySelector('a');
+      firstLink?.focus();
+    } else if (!mobileMenuOpen && menuButtonRef.current) {
+      menuButtonRef.current.focus();
+    }
+  }, [mobileMenuOpen]);
 
   return (
     <header className="bg-terracotta sticky top-0 z-50">
@@ -13,7 +25,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <span className="font-display text-2xl font-bold text-white">
-              Moon & Mud
+              Moon & Mud Pottery
             </span>
           </Link>
 
@@ -27,7 +39,7 @@ export default function Header() {
             </Link>
             <Link
               href="/shop"
-              className="text-white hover:text-cream transition-colors font-medium"
+              className="bg-white text-terracotta px-4 py-2 rounded-lg font-semibold hover:bg-cream transition-colors"
             >
               Shop
             </Link>
@@ -48,7 +60,7 @@ export default function Header() {
           {/* Cart Button */}
           <div className="flex items-center space-x-4">
             <button
-              className="snipcart-checkout relative p-2 text-white hover:text-cream transition-colors"
+              className="snipcart-checkout relative min-w-[44px] min-h-[44px] flex items-center justify-center text-white hover:text-cream transition-colors"
               aria-label="Shopping cart"
             >
               <svg
@@ -70,9 +82,12 @@ export default function Header() {
 
             {/* Mobile menu button */}
             <button
-              className="md:hidden p-2 text-white"
+              ref={menuButtonRef}
+              className="md:hidden min-w-[44px] min-h-[44px] flex items-center justify-center text-white"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle menu"
+              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-menu"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -102,32 +117,36 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-white/20">
-            <div className="flex flex-col space-y-4">
+          <div
+            id="mobile-menu"
+            ref={mobileMenuRef}
+            className="md:hidden py-4 border-t border-white/20"
+          >
+            <div className="flex flex-col space-y-2">
               <Link
                 href="/"
-                className="text-white hover:text-cream transition-colors font-medium"
+                className="text-white hover:text-cream transition-colors font-medium py-3 px-2 -mx-2 rounded-lg hover:bg-white/10"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Home
               </Link>
               <Link
                 href="/shop"
-                className="text-white hover:text-cream transition-colors font-medium"
+                className="bg-white text-terracotta font-semibold py-3 px-4 rounded-lg text-center hover:bg-cream transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Shop
               </Link>
               <Link
                 href="/#about"
-                className="text-white hover:text-cream transition-colors font-medium"
+                className="text-white hover:text-cream transition-colors font-medium py-3 px-2 -mx-2 rounded-lg hover:bg-white/10"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 About
               </Link>
               <Link
                 href="/#contact"
-                className="text-white hover:text-cream transition-colors font-medium"
+                className="text-white hover:text-cream transition-colors font-medium py-3 px-2 -mx-2 rounded-lg hover:bg-white/10"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Contact
