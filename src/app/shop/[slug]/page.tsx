@@ -5,19 +5,22 @@ import { getProductBySlug, getRelatedProducts, getAllSlugs } from '@/lib/product
 import AddToCartButton from '@/components/AddToCartButton';
 import ProductCard from '@/components/ProductCard';
 
+export const revalidate = 60; // Revalidate every 60 seconds
+
 interface ProductPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
-export function generateStaticParams() {
-  const slugs = getAllSlugs();
+export async function generateStaticParams() {
+  const slugs = await getAllSlugs();
   return slugs.map((slug) => ({ slug }));
 }
 
-export function generateMetadata({ params }: ProductPageProps) {
-  const product = getProductBySlug(params.slug);
+export async function generateMetadata({ params }: ProductPageProps) {
+  const { slug } = await params;
+  const product = await getProductBySlug(slug);
 
   if (!product) {
     return {
@@ -31,14 +34,15 @@ export function generateMetadata({ params }: ProductPageProps) {
   };
 }
 
-export default function ProductPage({ params }: ProductPageProps) {
-  const product = getProductBySlug(params.slug);
+export default async function ProductPage({ params }: ProductPageProps) {
+  const { slug } = await params;
+  const product = await getProductBySlug(slug);
 
   if (!product) {
     notFound();
   }
 
-  const relatedProducts = getRelatedProducts(product, 4);
+  const relatedProducts = await getRelatedProducts(product, 4);
 
   return (
     <div className="bg-cream min-h-screen">
@@ -159,7 +163,7 @@ export default function ProductPage({ params }: ProductPageProps) {
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  Handcrafted in Portland, OR
+                  Handcrafted in St. George, UT
                 </li>
                 <li className="flex items-center">
                   <svg

@@ -3,8 +3,10 @@ import ProductCard from '@/components/ProductCard';
 import { getFeaturedProducts } from '@/lib/products';
 import Link from 'next/link';
 
-export default function Home() {
-  const featuredProducts = getFeaturedProducts();
+export const revalidate = 60; // Revalidate every 60 seconds
+
+export default async function Home() {
+  const featuredProducts = await getFeaturedProducts();
 
   return (
     <>
@@ -61,7 +63,7 @@ export default function Home() {
                   honey at golden hour.
                 </p>
                 <p>
-                  Based in Portland, Oregon, we believe that surrounding
+                  Based in St. George, Utah, we believe that surrounding
                   yourself with handmade objects creates a more intentional,
                   connected life. Each mug, bowl, and vase carries the marks of
                   human hands - small imperfections that make them perfectly
@@ -90,7 +92,7 @@ export default function Home() {
                   <p className="font-display text-2xl text-brown mb-2">
                     Made with Love
                   </p>
-                  <p className="text-brown/70">Portland, Oregon</p>
+                  <p className="text-brown/70">St. George, Utah</p>
                 </div>
               </div>
             </div>

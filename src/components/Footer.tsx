@@ -124,7 +124,7 @@ export default function Footer() {
                   hello@moonandmud.com
                 </a>
               </li>
-              <li>Portland, Oregon</li>
+              <li>St. George, Utah</li>
               <li className="pt-4">
                 <p className="text-sm">
                   Subscribe to our newsletter for updates on new collections and

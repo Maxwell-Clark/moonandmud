@@ -3,7 +3,16 @@
     "allow": [
       "Bash(npm install)",
       "Bash(npm run build:*)",
-      "Bash(timeout 10 npm run dev:*)"
+      "Bash(timeout 10 npm run dev:*)",
+      "Bash(gh auth:*)",
+      "Bash(gh repo view:*)",
+      "Bash(git config:*)",
+      "Bash(xargs ls:*)",
+      "Bash(git push:*)",
+      "Bash(git rm:*)",
+      "Bash(npm install:*)",
+      "Bash(git add:*)",
+      "Bash(git commit --amend -m \"$\\(cat <<''EOF''\nFirst Commit\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")"
     ]
   }
 }
