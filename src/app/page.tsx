@@ -121,13 +121,13 @@ export default async function Home() {
                 </p>
                 <p>
                   Every piece is handcrafted using traditional wheel-throwing
-                  techniques combined with modern glazing methods. We draw
+                  techniques combined with modern glazing methods. I draw
                   inspiration from the natural world - the soft glow of
                   moonlight, the rich textures of earth, and the warm tones of
                   honey at golden hour.
                 </p>
                 <p>
-                  Based in St. George, Utah, we believe that surrounding
+                  Based in St. George, Utah, I believe that surrounding
                   yourself with handmade objects creates a more intentional,
                   connected life. Each mug, bowl, and vase carries the marks of
                   human hands - small imperfections that make them perfectly
@@ -136,28 +136,21 @@ export default async function Home() {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-tan/30 to-terracotta/20 rounded-2xl flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-24 h-24 mx-auto mb-6 bg-cream rounded-full flex items-center justify-center">
-                    <svg
-                      className="w-12 h-12 text-gold"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                      />
-                    </svg>
-                  </div>
-                  <p className="font-display text-2xl text-brown mb-2">
-                    Made with Love
-                  </p>
-                  <p className="text-brown/70">St. George, Utah</p>
-                </div>
+              <div className="rounded-2xl overflow-hidden shadow-lg">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d103089.29871892584!2d-113.6342!3d37.0965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80ca44d8f7b8a3e5%3A0x7d5c8e3b1e8c8b0a!2sSt.%20George%2C%20UT!5e0!3m2!1sen!2sus!4v1234567890"
+                  width="100%"
+                  height="400"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Moon & Mud Pottery Location - St. George, Utah"
+                />
+              </div>
+              <div className="text-center mt-4">
+                <p className="font-display text-2xl text-brown mb-1">Made with Love</p>
+                <p className="text-brown/70">St. George, Utah</p>
               </div>
             </div>
           </div>
@@ -219,7 +212,7 @@ export default async function Home() {
                 Sustainable
               </h3>
               <p className="text-brown/70">
-                We use locally-sourced clay and non-toxic glazes, minimizing our
+                I use locally-sourced clay and non-toxic glazes, minimizing my
                 environmental footprint.
               </p>
             </div>
