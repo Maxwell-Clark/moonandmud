@@ -6,7 +6,7 @@ export default function Hero() {
     <section className="relative bg-gradient-to-br from-cream via-cream-dark to-cream-muted">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="text-center md:text-left">
+          <div className="text-center md:text-left order-2 md:order-1">
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-brown mb-6 leading-tight">
               Crafted by Hand,
               <br />
@@ -26,7 +26,7 @@ export default function Hero() {
               </Link>
             </div>
           </div>
-          <div className="relative">
+          <div className="relative order-1 md:order-2">
             <div className="aspect-square bg-gradient-to-br from-gold/20 to-terracotta/20 rounded-full flex items-center justify-center">
               <div className="w-3/4 h-3/4 bg-white rounded-full flex items-center justify-center shadow-2xl overflow-hidden">
                 <Image

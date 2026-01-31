@@ -24,7 +24,7 @@ export default function Header() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <span className="font-display text-2xl font-bold text-white">
+            <span className="font-display text-2xl font-bold text-white text-center sm:text-left">
               Moon & Mud Pottery
             </span>
           </Link>
