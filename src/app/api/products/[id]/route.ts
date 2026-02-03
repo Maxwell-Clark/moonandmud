@@ -50,7 +50,7 @@ export async function PATCH(request: NextRequest, { params }: RouteParams) {
     if (body.description !== undefined) updateData.description = body.description;
     if (body.images !== undefined) updateData.images = body.images;
     if (body.featured !== undefined) updateData.featured = body.featured;
-    if (body.inStock !== undefined) updateData.in_stock = body.inStock;
+    if (body.quantity !== undefined) updateData.quantity = parseInt(body.quantity, 10);
 
     updateData.updated_at = new Date().toISOString();
 

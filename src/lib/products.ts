@@ -19,6 +19,7 @@ function dbToProduct(dbProduct: DbProduct): Product {
     category: dbProduct.category,
     description: dbProduct.description,
     images: dbProduct.images,
+    quantity: dbProduct.quantity,
     featured: dbProduct.featured,
     inStock: dbProduct.in_stock,
   };

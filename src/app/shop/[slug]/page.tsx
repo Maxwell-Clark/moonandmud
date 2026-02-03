@@ -102,6 +102,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
                     product={product}
                     className="btn-primary w-full text-lg py-4"
                   />
+                  {product.quantity <= 3 && (
+                    <p className="text-sm text-terracotta font-medium text-center">
+                      Only {product.quantity} left in stock
+                    </p>
+                  )}
                   <p className="text-sm text-brown/70 text-center">
                     Free shipping on orders over $100
                   </p>

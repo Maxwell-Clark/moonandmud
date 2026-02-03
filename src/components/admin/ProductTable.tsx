@@ -12,6 +12,7 @@ interface Product {
   price: number;
   category: string;
   images: string[];
+  quantity: number;
   featured: boolean;
   in_stock: boolean;
 }
@@ -57,12 +58,13 @@ export default function ProductTable({ products }: ProductTableProps) {
     }
   }
 
-  async function toggleStock(id: string, inStock: boolean) {
+  async function updateQuantity(id: string, newQuantity: number) {
+    const qty = Math.max(0, newQuantity);
     try {
       await fetch(`/api/products/${id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ inStock: !inStock }),
+        body: JSON.stringify({ quantity: qty }),
       });
       router.refresh();
     } catch {
@@ -102,7 +104,7 @@ export default function ProductTable({ products }: ProductTableProps) {
               Featured
             </th>
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              In Stock
+              Stock
             </th>
             <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
               Actions
@@ -160,18 +162,32 @@ export default function ProductTable({ products }: ProductTableProps) {
                 </button>
               </td>
               <td className="px-6 py-4 whitespace-nowrap">
-                <button
-                  onClick={() => toggleStock(product.id, product.in_stock)}
-                  className={`relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-brown focus:ring-offset-2 ${
-                    product.in_stock ? 'bg-green-500' : 'bg-gray-200'
-                  }`}
-                >
+                <div className="flex items-center space-x-2">
+                  <button
+                    onClick={() => updateQuantity(product.id, product.quantity - 1)}
+                    disabled={product.quantity <= 0}
+                    className="w-6 h-6 flex items-center justify-center rounded bg-gray-200 hover:bg-gray-300 text-gray-700 disabled:opacity-30 text-sm font-bold"
+                  >
+                    -
+                  </button>
                   <span
-                    className={`inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out ${
-                      product.in_stock ? 'translate-x-5' : 'translate-x-0'
+                    className={`text-sm font-medium min-w-[2ch] text-center ${
+                      product.quantity === 0
+                        ? 'text-red-600'
+                        : product.quantity <= 3
+                          ? 'text-amber-600'
+                          : 'text-green-600'
                     }`}
-                  />
-                </button>
+                  >
+                    {product.quantity}
+                  </span>
+                  <button
+                    onClick={() => updateQuantity(product.id, product.quantity + 1)}
+                    className="w-6 h-6 flex items-center justify-center rounded bg-gray-200 hover:bg-gray-300 text-gray-700 text-sm font-bold"
+                  >
+                    +
+                  </button>
+                </div>
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                 <div className="flex items-center justify-end space-x-2">

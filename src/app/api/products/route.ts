@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { name, slug, price, category, description, images, featured, inStock } = body;
+    const { name, slug, price, category, description, images, featured, quantity } = body;
 
     // Validate required fields
     if (!name || !slug || !price || !category) {
@@ -52,7 +52,7 @@ export async function POST(request: NextRequest) {
         description: description || '',
         images: images || [],
         featured: featured || false,
-        in_stock: inStock !== false,
+        quantity: parseInt(quantity, 10) || 0,
       })
       .select()
       .single();

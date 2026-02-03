@@ -61,6 +61,7 @@ export type DbProduct = {
   description: string;
   images: string[];
   featured: boolean;
+  quantity: number;
   in_stock: boolean;
   created_at: string;
   updated_at: string;

@@ -42,6 +42,26 @@ CREATE POLICY "Public can read products" ON products
 -- 3. Set it to Public
 -- 4. The bucket policy should allow public read access
 
+-- Add quantity column for inventory tracking
+ALTER TABLE products ADD COLUMN IF NOT EXISTS quantity INTEGER NOT NULL DEFAULT 0;
+
+-- Backfill: set quantity=1 for in-stock items, 0 for out-of-stock
+UPDATE products SET quantity = CASE WHEN in_stock = true THEN 1 ELSE 0 END;
+
+-- Trigger to keep in_stock derived from quantity
+CREATE OR REPLACE FUNCTION sync_in_stock()
+RETURNS TRIGGER AS $$
+BEGIN
+  NEW.in_stock := (NEW.quantity > 0);
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+DROP TRIGGER IF EXISTS trigger_sync_in_stock ON products;
+CREATE TRIGGER trigger_sync_in_stock
+  BEFORE INSERT OR UPDATE OF quantity ON products
+  FOR EACH ROW EXECUTE FUNCTION sync_in_stock();
+
 -- Optional: Insert sample data (the existing static products)
 -- Uncomment and run this section if you want to migrate existing products
 

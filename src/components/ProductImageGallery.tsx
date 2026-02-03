@@ -11,6 +11,13 @@ interface ProductImageGalleryProps {
 export default function ProductImageGallery({ images, productName }: ProductImageGalleryProps) {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
+  function prevImage() {
+    setSelectedIndex((i) => (i === 0 ? images.length - 1 : i - 1));
+  }
+  function nextImage() {
+    setSelectedIndex((i) => (i === images.length - 1 ? 0 : i + 1));
+  }
+
   if (!images.length) {
     return (
       <div className="aspect-square bg-cream-muted rounded-2xl overflow-hidden">
@@ -44,6 +51,28 @@ export default function ProductImageGallery({ images, productName }: ProductImag
           sizes="(max-width: 768px) 100vw, 50vw"
           priority
         />
+        {images.length > 1 && (
+          <>
+            <button
+              onClick={prevImage}
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-brown/40 hover:bg-brown/60 text-white flex items-center justify-center transition-colors"
+              aria-label="Previous image"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              onClick={nextImage}
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-brown/40 hover:bg-brown/60 text-white flex items-center justify-center transition-colors"
+              aria-label="Next image"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </>
+        )}
       </div>
 
       {images.length > 1 && (

@@ -15,6 +15,7 @@ interface ProductFormProps {
     category: string;
     description: string;
     images: string[];
+    quantity: number;
     featured: boolean;
     in_stock: boolean;
   };
@@ -32,7 +33,7 @@ export default function ProductForm({ product }: ProductFormProps) {
     description: product?.description || '',
     images: product?.images || [],
     featured: product?.featured || false,
-    inStock: product?.in_stock ?? true,
+    quantity: product?.quantity?.toString() || '0',
   });
 
   const [saving, setSaving] = useState(false);
@@ -66,7 +67,10 @@ export default function ProductForm({ product }: ProductFormProps) {
       const res = await fetch(url, {
         method,
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          ...form,
+          quantity: parseInt(form.quantity, 10) || 0,
+        }),
       });
 
       if (!res.ok) {
@@ -193,15 +197,19 @@ export default function ProductForm({ product }: ProductFormProps) {
           <span className="ml-2 text-sm text-gray-700">Featured product</span>
         </label>
 
-        <label className="flex items-center">
+        <div className="flex items-center">
+          <label htmlFor="quantity" className="text-sm text-gray-700 mr-2">
+            Quantity in Stock
+          </label>
           <input
-            type="checkbox"
-            checked={form.inStock}
-            onChange={(e) => setForm((prev) => ({ ...prev, inStock: e.target.checked }))}
-            className="h-4 w-4 text-brown border-gray-300 rounded focus:ring-brown"
+            type="number"
+            id="quantity"
+            value={form.quantity}
+            onChange={(e) => setForm((prev) => ({ ...prev, quantity: e.target.value }))}
+            min="0"
+            className="w-20 px-2 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brown focus:border-transparent"
           />
-          <span className="ml-2 text-sm text-gray-700">In stock</span>
-        </label>
+        </div>
       </div>
 
       <div className="flex items-center justify-end space-x-4 pt-4 border-t">

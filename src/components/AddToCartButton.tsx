@@ -25,6 +25,7 @@ export default function AddToCartButton({
       data-item-description={product.description}
       data-item-image={product.images[0]}
       data-item-quantity={quantity}
+      data-item-max-quantity={product.quantity}
     >
       Add to Cart
     </button>
