@@ -1,8 +1,8 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import Image from 'next/image';
 import { getProductBySlug, getRelatedProducts, getAllSlugs } from '@/lib/products';
 import AddToCartButton from '@/components/AddToCartButton';
+import ProductImageGallery from '@/components/ProductImageGallery';
 import ProductCard from '@/components/ProductCard';
 
 export const revalidate = 60; // Revalidate every 60 seconds
@@ -65,35 +65,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid md:grid-cols-2 gap-12">
           {/* Product Image */}
-          <div className="relative aspect-square bg-cream-muted rounded-2xl overflow-hidden">
-            {product.images[0] ? (
-              <Image
-                src={product.images[0]}
-                alt={product.name}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-                priority
-              />
-            ) : (
-              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gold/10 to-terracotta/10">
-                <svg
-                  className="w-32 h-32 text-tan/50"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1}
-                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                  />
-                </svg>
-              </div>
-            )}
+          <div className="relative">
+            <ProductImageGallery images={product.images} productName={product.name} />
             {!product.inStock && (
-              <div className="absolute top-4 right-4 bg-brown text-white px-3 py-1 rounded-lg">
+              <div className="absolute top-4 right-4 bg-brown text-white px-3 py-1 rounded-lg z-10">
                 Sold Out
               </div>
             )}
