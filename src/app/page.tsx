@@ -20,8 +20,8 @@ export default async function Home() {
               Featured Pieces
             </h2>
             <p className="text-brown/70 max-w-2xl mx-auto">
-              Discover our most beloved creations, each one crafted with care
-              and designed to bring warmth to your everyday rituals.
+              Discover my most beloved creations, each one crafted with care
+              and designed to bring warmth and a touch of creative sparkle to your everyday life.
             </p>
           </div>
 
@@ -47,7 +47,7 @@ export default async function Home() {
               Browse by Category
             </h2>
             <p className="text-brown/70 max-w-2xl mx-auto">
-              Find the perfect piece for your home, from everyday mugs to decorative vases.
+              Find the perfect piece for your home from everyday cups, bowls, plates to decorative vases.
             </p>
           </div>
 
@@ -113,25 +113,53 @@ export default async function Home() {
               </h2>
               <div className="space-y-4 text-brown/70">
                 <p>
-                  Moon & Mud Pottery was born from a deep love for the
-                  meditative process of working with clay. What started as a
-                  hobby in a small garage studio has grown into a passion for
-                  creating functional art that brings beauty to everyday
-                  moments.
+                  Hi, I&apos;m Kira! The hands and heart behind Moon &amp; Mud Pottery.
                 </p>
                 <p>
-                  Every piece is handcrafted using traditional wheel-throwing
-                  techniques combined with modern glazing methods. I draw
-                  inspiration from the natural world - the soft glow of
-                  moonlight, the rich textures of earth, and the warm tones of
-                  honey at golden hour.
+                  Moon &amp; Mud was born shortly after the birth of my first child
+                  in Little Rock, Arkansas. During a season of postpartum
+                  depression and anxiety, I knew I needed something just for me.
+                  Something grounding, creative and life giving. What began as a
+                  simple pottery class quickly became so much more than a hobby.
+                  It became healing and it felt like I was meeting myself again.
                 </p>
                 <p>
-                  Based in St. George, Utah, I believe that surrounding
-                  yourself with handmade objects creates a more intentional,
-                  connected life. Each mug, bowl, and vase carries the marks of
-                  human hands - small imperfections that make them perfectly
-                  unique.
+                  Working with clay gave me a way to slow down. To breathe. To create.
+                  Over time, that creative outlet grew into a deep love for the
+                  meditative rhythm of the wheel and the quiet magic of shaping
+                  earth into something both beautiful and useful.
+                </p>
+                <p>
+                  I began sharing my successes and my failures on social media,
+                  inviting others into the messy, funny and honest process of
+                  learning. I&apos;ve since sold pieces at local markets and am now
+                  excited to offer my work online as Moon &amp; Mud continues to grow.
+                </p>
+                <p>
+                  Each piece is handcrafted using traditional wheel-throwing
+                  techniques paired with modern glazing methods. I draw
+                  inspiration from the natural world. The soft glow of moonlight,
+                  the rich textures of earth, and the warm, golden tones of honey
+                  at sunset.
+                </p>
+                <p>
+                  Now based in St. George, Utah, my work continues to evolve as I
+                  experiment with new techniques and forms. I love creating both
+                  functional and decorative pieces. Mugs to hold your morning
+                  coffee, bowls for gathering around the table, and vases that
+                  bring life into your home.
+                </p>
+                <p>
+                  I believe surrounding yourself with handmade objects creates a
+                  more intentional, connected life. Every mug, bowl, and vase
+                  carries the subtle marks of human hands. Small imperfections
+                  that make each piece perfectly unique.
+                </p>
+                <p>
+                  Thank you for being here and supporting handmade.
+                </p>
+                <p className="font-display text-brown">
+                  — Kira
                 </p>
               </div>
             </div>
@@ -237,7 +265,7 @@ export default async function Home() {
                 Timeless
               </h3>
               <p className="text-brown/70">
-                Our designs are meant to last, both in durability and style.
+                My designs are meant to last, both in durability and style.
                 Pieces you will treasure for years.
               </p>
             </div>
@@ -245,78 +273,60 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* Social Media Section */}
       <section className="py-16 md:py-24 bg-brown text-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-              What Our Customers Say
+              Follow Along
             </h2>
+            <p className="text-cream/70 max-w-2xl mx-auto">
+              Join me on social media for behind-the-scenes peeks, new pieces, and the messy, funny, honest process of creating.
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-brown-light/30 rounded-xl p-6 border border-cream/10">
-              <div className="flex mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <svg
-                    key={i}
-                    className="w-5 h-5 text-gold"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
+          <div className="flex justify-center gap-8">
+            <a
+              href="https://instagram.com/moonandmudpottery"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center gap-3"
+            >
+              <div className="w-16 h-16 bg-cream/10 rounded-full flex items-center justify-center group-hover:bg-gold/20 transition-all duration-300">
+                <svg className="w-7 h-7 text-cream group-hover:text-gold transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                </svg>
               </div>
-              <p className="text-cream/80 mb-4">
-                "The <Link href="/shop?category=mugs" className="text-gold hover:underline">Crescent Moon Mug</Link> is absolutely perfect. It makes my
-                morning coffee feel like a special ritual. You can feel the love
-                in every detail."
-              </p>
-              <p className="font-semibold">— Sarah M.</p>
-            </div>
+              <span className="text-cream/70 group-hover:text-gold transition-colors font-medium">Instagram</span>
+            </a>
 
-            <div className="bg-brown-light/30 rounded-xl p-6 border border-cream/10">
-              <div className="flex mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <svg
-                    key={i}
-                    className="w-5 h-5 text-gold"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
+            <a
+              href="https://tiktok.com/@moonandmudpottery"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center gap-3"
+            >
+              <div className="w-16 h-16 bg-cream/10 rounded-full flex items-center justify-center group-hover:bg-gold/20 transition-all duration-300">
+                <svg className="w-7 h-7 text-cream group-hover:text-gold transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.48V13a8.28 8.28 0 005.58 2.16V11.7a4.85 4.85 0 01-3.77-1.82v-.01l.01-.02V6.69h3.76z" />
+                </svg>
               </div>
-              <p className="text-cream/80 mb-4">
-                "I bought the <Link href="/shop?category=bowls" className="text-gold hover:underline">serving bowl</Link> for my wife and she was thrilled. The
-                quality is outstanding and it's become the centerpiece of our
-                table."
-              </p>
-              <p className="font-semibold">— James T.</p>
-            </div>
+              <span className="text-cream/70 group-hover:text-gold transition-colors font-medium">TikTok</span>
+            </a>
 
-            <div className="bg-brown-light/30 rounded-xl p-6 border border-cream/10">
-              <div className="flex mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <svg
-                    key={i}
-                    className="w-5 h-5 text-gold"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
+            <a
+              href="https://youtube.com/@moonandmudpottery"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center gap-3"
+            >
+              <div className="w-16 h-16 bg-cream/10 rounded-full flex items-center justify-center group-hover:bg-gold/20 transition-all duration-300">
+                <svg className="w-7 h-7 text-cream group-hover:text-gold transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                </svg>
               </div>
-              <p className="text-cream/80 mb-4">
-                "The <Link href="/shop?category=planters" className="text-gold hover:underline">moon phase planter</Link> is even more beautiful in person. My
-                fiddle leaf fig looks so happy in its new home. Highly
-                recommend!"
-              </p>
-              <p className="font-semibold">— Emily R.</p>
-            </div>
+              <span className="text-cream/70 group-hover:text-gold transition-colors font-medium">YouTube</span>
+            </a>
           </div>
         </div>
       </section>
@@ -325,10 +335,10 @@ export default async function Home() {
       <section className="py-16 md:py-24 bg-tan/10">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-brown mb-4">
-            Join Our Community
+            Join The Moon &amp; Mud Community
           </h2>
           <p className="text-brown/70 mb-8">
-            Be the first to know about new arrivals in our shop, limited edition pieces,
+            Be the first to know about new arrivals in my shop, limited edition pieces,
             and exclusive subscriber-only offers.
           </p>
           <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">

@@ -22,7 +22,7 @@ export default function Hero() {
                 Shop Collection
               </Link>
               <Link href="#about" className="btn-outline text-center text-lg py-4 px-8 min-h-[56px] flex items-center justify-center">
-                Our Story
+                My Story
               </Link>
             </div>
           </div>
@@ -32,9 +32,9 @@ export default function Hero() {
                 <Image
                   src="/images/MNMLogo.PNG"
                   alt="Moon & Mud Pottery"
-                  width={300}
-                  height={300}
-                  className="w-56 h-56 object-contain rounded-full"
+                  width={400}
+                  height={400}
+                  className="w-72 h-72 object-contain rounded-full"
                 />
               </div>
             </div>
