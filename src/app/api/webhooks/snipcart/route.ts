@@ -29,7 +29,9 @@ export async function POST(request: NextRequest) {
     });
 
     if (!orderRes.ok) {
-      console.error('Failed to validate order with Snipcart:', orderRes.status);
+      const errorBody = await orderRes.text();
+      console.error('Failed to validate order with Snipcart:', orderRes.status, errorBody);
+      console.error('Token used:', token);
       return NextResponse.json({ error: 'Order validation failed' }, { status: 400 });
     }
 
