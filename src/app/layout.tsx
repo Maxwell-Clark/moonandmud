@@ -39,7 +39,7 @@ export default function RootLayout({
         <div
           hidden
           id="snipcart"
-          data-api-key="MWQ4YjcwODAtODQxYS00NDNlLTliMGItZTlmMjlkMTZkOTUxNjM5MDU0NzM2NjEyMDU5OTU1"
+          data-api-key={process.env.NEXT_PUBLIC_SNIPCART_API_KEY}
           data-config-modal-style="side"
         ></div>
         <script

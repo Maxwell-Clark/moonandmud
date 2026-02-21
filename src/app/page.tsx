@@ -13,13 +13,13 @@ export default async function Home() {
       <Hero />
 
       {/* Featured Products Section */}
-      <section className="py-16 md:py-24 bg-cream">
+      <section className="py-16 md:py-24 bg-brown text-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-brown mb-4">
+            <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
               Featured Pieces
             </h2>
-            <p className="text-brown/70 max-w-2xl mx-auto">
+            <p className="text-cream/70 max-w-2xl mx-auto">
               Discover my most beloved creations, each one crafted with care
               and designed to bring warmth and a touch of creative sparkle to your everyday life.
             </p>
