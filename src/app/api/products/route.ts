@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { revalidatePath } from 'next/cache';
 import { supabaseAdmin, DbProduct } from '@/lib/supabase/client';
 import { getSession } from '@/lib/auth';
 
@@ -60,6 +61,9 @@ export async function POST(request: NextRequest) {
     if (error) {
       return NextResponse.json({ error: error.message }, { status: 500 });
     }
+
+    revalidatePath('/');
+    revalidatePath('/shop');
 
     return NextResponse.json(data, { status: 201 });
   } catch (error) {

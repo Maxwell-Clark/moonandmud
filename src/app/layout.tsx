@@ -37,6 +37,7 @@ export default function RootLayout({
 
         {/* Snipcart container */}
         <div
+          suppressHydrationWarning
           hidden
           id="snipcart"
           data-api-key={process.env.NEXT_PUBLIC_SNIPCART_API_KEY}

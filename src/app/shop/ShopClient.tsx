@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
+import { useSearchParams } from 'next/navigation';
 import ProductGrid from '@/components/ProductGrid';
 import CategoryFilter from '@/components/CategoryFilter';
 import { sortProducts } from '@/lib/products';
@@ -13,7 +14,10 @@ interface ShopClientProps {
 }
 
 export default function ShopClient({ initialProducts }: ShopClientProps) {
-  const [selectedCategory, setSelectedCategory] = useState('all');
+  const searchParams = useSearchParams();
+  const [selectedCategory, setSelectedCategory] = useState(
+    searchParams.get('category') || 'all'
+  );
   const [sortBy, setSortBy] = useState<SortOption>('newest');
 
   const filteredAndSortedProducts = useMemo(() => {

@@ -52,6 +52,8 @@ export const supabaseAdmin = {
   get storage() { return getSupabaseAdmin().storage; },
 };
 
+export type DbSubscriber = { id: string; email: string; created_at: string; };
+
 export type DbProduct = {
   id: string;
   name: string;

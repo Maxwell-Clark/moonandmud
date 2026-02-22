@@ -82,7 +82,7 @@ export const products: Product[] = [
     price: 85.0,
     category: 'bowls',
     description:
-      'A set of three nesting bowls in graduating sizes. Each bowl features our signature honey glaze with subtle variations. Perfect for prep work or serving.',
+      'A set of three nesting bowls in graduating sizes. Each bowl features my signature honey glaze with subtle variations. Perfect for prep work or serving.',
     images: ['/images/products/bowl-002.jpg'],
     quantity: 1,
     featured: false,
@@ -147,7 +147,7 @@ export const products: Product[] = [
     price: 36.0,
     category: 'plates',
     description:
-      'A 10.5 inch dinner plate with our signature honey glaze. The slightly raised rim keeps sauces contained while the warm color makes every meal feel special.',
+      'A 10.5 inch dinner plate with my signature honey glaze. The slightly raised rim keeps sauces contained while the warm color makes every meal feel special.',
     images: ['/images/products/plate-001.jpg'],
     quantity: 1,
     featured: false,
@@ -160,7 +160,7 @@ export const products: Product[] = [
     price: 36.0,
     category: 'plates',
     description:
-      'A 10.5 inch dinner plate in our creamy moon-white glaze. Elegant and versatile, it pairs beautifully with any table setting.',
+      'A 10.5 inch dinner plate in my creamy moon-white glaze. Elegant and versatile, it pairs beautifully with any table setting.',
     images: ['/images/products/plate-002.jpg'],
     quantity: 1,
     featured: false,

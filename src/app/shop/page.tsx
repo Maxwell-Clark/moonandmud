@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import { getAllProducts } from '@/lib/products';
 import ShopClient from './ShopClient';
 
-export const revalidate = 60; // Revalidate every 60 seconds
+export const revalidate = 2;
 
 export default async function ShopPage() {
   const products = await getAllProducts();
@@ -13,11 +13,11 @@ export default async function ShopPage() {
       <div className="bg-gradient-to-br from-cream-dark to-cream py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-display text-4xl md:text-5xl font-bold text-brown mb-4">
-            Shop Our Collection
+            Shop My Collection
           </h1>
           <p className="text-brown/70 max-w-2xl mx-auto">
-            Browse our complete collection of handcrafted pottery. Each piece is
-            made with care in our St. George studio.
+            Browse my complete collection of handcrafted pottery. Each piece is
+            made with care in my St. George studio.
           </p>
         </div>
       </div>

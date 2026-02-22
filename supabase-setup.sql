@@ -87,3 +87,12 @@ VALUES
   ('decor-002', 'Ring Dish', 'ring-dish', 22.00, 'decorative', 'A small dish perfect for rings, earrings, or other small treasures. Features a crescent moon impression in the center and a pale moon-white glaze.', ARRAY['/images/products/decor-002.jpg'], false, true),
   ('decor-003', 'Soap Dish', 'soap-dish', 28.00, 'decorative', 'An elevated soap dish with drainage ridges to keep your soap dry. The warm earth tones bring a spa-like feel to your bathroom.', ARRAY['/images/products/decor-003.jpg'], false, true);
 */
+
+-- Create subscribers table for newsletter signups
+CREATE TABLE IF NOT EXISTS subscribers (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  email TEXT UNIQUE NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+CREATE INDEX IF NOT EXISTS idx_subscribers_email ON subscribers(email);
+ALTER TABLE subscribers ENABLE ROW LEVEL SECURITY;

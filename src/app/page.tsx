@@ -1,9 +1,10 @@
 import Hero from '@/components/Hero';
 import ProductCard from '@/components/ProductCard';
+import NewsletterForm from '@/components/NewsletterForm';
 import { getFeaturedProducts } from '@/lib/products';
 import Link from 'next/link';
 
-export const revalidate = 60; // Revalidate every 60 seconds
+export const revalidate = 2;
 
 export default async function Home() {
   const featuredProducts = await getFeaturedProducts();
@@ -190,7 +191,7 @@ export default async function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-brown mb-4">
-              Our Values
+              My Values
             </h2>
           </div>
 
@@ -341,16 +342,7 @@ export default async function Home() {
             Be the first to know about new arrivals in my shop, limited edition pieces,
             and exclusive subscriber-only offers.
           </p>
-          <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-grow px-4 py-3 rounded-lg border border-tan/30 focus:outline-none focus:ring-2 focus:ring-gold bg-white"
-            />
-            <button type="submit" className="btn-primary whitespace-nowrap">
-              Subscribe
-            </button>
-          </form>
+          <NewsletterForm />
         </div>
       </section>
     </>

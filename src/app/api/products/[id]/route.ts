@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { revalidatePath } from 'next/cache';
 import { supabaseAdmin } from '@/lib/supabase/client';
 import { getSession } from '@/lib/auth';
 
@@ -65,6 +66,10 @@ export async function PATCH(request: NextRequest, { params }: RouteParams) {
       return NextResponse.json({ error: error.message }, { status: 500 });
     }
 
+    revalidatePath('/');
+    revalidatePath('/shop');
+    revalidatePath(`/shop/${data.slug}`);
+
     return NextResponse.json(data);
   } catch (error) {
     return NextResponse.json(
@@ -92,6 +97,9 @@ export async function DELETE(request: NextRequest, { params }: RouteParams) {
     if (error) {
       return NextResponse.json({ error: error.message }, { status: 500 });
     }
+
+    revalidatePath('/');
+    revalidatePath('/shop');
 
     return NextResponse.json({ success: true });
   } catch (error) {

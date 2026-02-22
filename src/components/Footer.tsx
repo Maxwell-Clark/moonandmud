@@ -17,7 +17,7 @@ export default function Footer() {
             />
             <p className="text-cream/70 mb-4 max-w-md">
               Handcrafted pottery inspired by the gentle glow of moonlight and
-              the rich texture of earth. Each piece is made with love in our
+              the rich texture of earth. Each piece is made with love in my
               small studio.
             </p>
             <div className="flex space-x-4">
@@ -176,7 +176,7 @@ export default function Footer() {
               <li>St. George, Utah</li>
               <li className="pt-4">
                 <p className="text-sm">
-                  Subscribe to our newsletter for updates on new collections and
+                  Subscribe to my newsletter for updates on new collections and
                   special offers.
                 </p>
               </li>

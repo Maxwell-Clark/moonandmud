@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { revalidatePath } from 'next/cache';
 import { supabaseAdmin } from '@/lib/supabase/client';
 
 export async function POST(request: NextRequest) {
@@ -58,8 +59,26 @@ export async function POST(request: NextRequest) {
         const newQuantity = Math.max(0, product.quantity - item.quantity);
         await supabaseAdmin
           .from('products')
-          .update({ quantity: newQuantity, updated_at: new Date().toISOString() })
+          .update({
+            quantity: newQuantity,
+            in_stock: newQuantity > 0,
+            updated_at: new Date().toISOString(),
+          })
           .eq('id', item.id);
+      }
+    }
+
+    // Revalidate all affected pages including product detail pages
+    revalidatePath('/');
+    revalidatePath('/shop');
+    for (const item of items) {
+      const { data: prod } = await supabaseAdmin
+        .from('products')
+        .select('slug')
+        .eq('id', item.id)
+        .single();
+      if (prod?.slug) {
+        revalidatePath(`/shop/${prod.slug}`);
       }
     }
 
