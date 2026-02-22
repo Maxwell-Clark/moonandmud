@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
   title: 'Moon and Mud Pottery | Handcrafted Ceramics',
@@ -47,6 +48,7 @@ export default function RootLayout({
           async
           src="https://cdn.snipcart.com/themes/v3.2.0/default/snipcart.js"
         ></script>
+        <Analytics />
       </body>
     </html>
   );
