@@ -21,16 +21,24 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Webhook not configured' }, { status: 500 });
     }
 
-    const orderRes = await fetch(`https://app.snipcart.com/api/orders/${token}`, {
+    const authHeader = `Basic ${Buffer.from(snipcartSecret + ':').toString('base64')}`;
+    const url = `https://app.snipcart.com/api/orders/${token}`;
+    console.log('Fetching order from:', url);
+    console.log('Secret key starts with:', snipcartSecret.substring(0, 5));
+    console.log('Secret key length:', snipcartSecret.length);
+
+    const orderRes = await fetch(url, {
       headers: {
-        Authorization: `Basic ${Buffer.from(snipcartSecret + ':').toString('base64')}`,
+        Authorization: authHeader,
         Accept: 'application/json',
       },
     });
 
     if (!orderRes.ok) {
       const errorBody = await orderRes.text();
-      console.error('Failed to validate order with Snipcart:', orderRes.status, errorBody);
+      console.error('Snipcart response status:', orderRes.status);
+      console.error('Snipcart response headers:', JSON.stringify(Object.fromEntries(orderRes.headers.entries())));
+      console.error('Snipcart response body:', errorBody);
       console.error('Token used:', token);
       return NextResponse.json({ error: 'Order validation failed' }, { status: 400 });
     }
