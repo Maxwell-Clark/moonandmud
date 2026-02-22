@@ -83,7 +83,7 @@ export default function Header() {
             {/* Mobile menu button */}
             <button
               ref={menuButtonRef}
-              className="md:hidden min-w-[44px] min-h-[44px] flex items-center justify-center text-white"
+              className="md:hidden min-w-[44px] min-h-[44px] flex items-center justify-center text-white focus:outline-none"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={mobileMenuOpen}
@@ -116,12 +116,14 @@ export default function Header() {
         </div>
 
         {/* Mobile Navigation */}
-        {mobileMenuOpen && (
-          <div
-            id="mobile-menu"
-            ref={mobileMenuRef}
-            className="md:hidden py-4 border-t border-white/20"
-          >
+        <div
+          id="mobile-menu"
+          ref={mobileMenuRef}
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            mobileMenuOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
+          }`}
+        >
+          <div className="py-4 border-t border-white/20">
             <div className="flex flex-col space-y-2">
               <Link
                 href="/"
@@ -153,7 +155,7 @@ export default function Header() {
               </Link>
             </div>
           </div>
-        )}
+        </div>
       </nav>
     </header>
   );

@@ -126,39 +126,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-display text-lg font-semibold text-cream mb-4">
-              Quick Links
-            </h4>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/#about"
-                  className="text-cream/70 hover:text-gold transition-colors"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/#contact"
-                  className="text-cream/70 hover:text-gold transition-colors"
-                >
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-cream/70 hover:text-gold transition-colors"
-                >
-                  Shipping & Returns
-                </a>
-              </li>
-            </ul>
-          </div>
-
           {/* Contact */}
           <div id="contact">
             <h4 className="font-display text-lg font-semibold text-cream mb-4">
@@ -167,10 +134,10 @@ export default function Footer() {
             <ul className="space-y-2 text-cream/70">
               <li>
                 <a
-                  href="mailto:hello@moonandmud.com"
+                  href="mailto:moonandmudpottery@gmail.com"
                   className="hover:text-gold transition-colors"
                 >
-                  hello@moonandmud.com
+                  moonandmudpottery@gmail.com
                 </a>
               </li>
               <li>St. George, Utah</li>
