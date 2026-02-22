@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
 
     const orderRes = await fetch(`https://app.snipcart.com/api/v3/orders/${token}`, {
       headers: {
-        Authorization: `Basic ${Buffer.from(snipcartSecret + ':').toString('base64')}`,
+        Authorization: `Bearer ${snipcartSecret}`,
         Accept: 'application/json',
       },
     });
