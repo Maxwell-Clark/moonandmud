@@ -21,9 +21,9 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Webhook not configured' }, { status: 500 });
     }
 
-    const orderRes = await fetch(`https://app.snipcart.com/api/v3/orders/${token}`, {
+    const orderRes = await fetch(`https://app.snipcart.com/api/orders/${token}`, {
       headers: {
-        Authorization: `Bearer ${snipcartSecret}`,
+        Authorization: `Basic ${Buffer.from(snipcartSecret + ':').toString('base64')}`,
         Accept: 'application/json',
       },
     });
