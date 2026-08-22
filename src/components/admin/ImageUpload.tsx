@@ -125,7 +125,7 @@ export default function ImageUpload({ images, onChange }: ImageUploadProps) {
           <input
             ref={fileInputRef}
             type="file"
-            accept="image/*"
+            accept="image/*,.heic,.heif"
             multiple
             onChange={handleUpload}
             disabled={uploading}
@@ -149,6 +149,7 @@ export default function ImageUpload({ images, onChange }: ImageUploadProps) {
       {error && <p className="text-red-500 text-sm">{error}</p>}
       <p className="text-sm text-gray-500">
         First image will be the main product image. Click and drag to reorder.
+        HEIC photos from iPhone are converted to JPEG automatically.
       </p>
     </div>
   );

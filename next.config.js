@@ -9,6 +9,11 @@ const nextConfig = {
       },
     ],
   },
+  experimental: {
+    // heic-convert ships a large libheif WebAssembly bundle that must not be
+    // processed by the bundler; load it from node_modules at runtime instead.
+    serverComponentsExternalPackages: ['heic-convert'],
+  },
   trailingSlash: true,
 };
 
