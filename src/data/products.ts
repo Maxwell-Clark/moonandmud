@@ -12,12 +12,8 @@ export interface Product {
 }
 
 export const CATEGORIES = [
-  'mugs',
-  'bowls',
-  'vases',
-  'plates',
-  'planters',
-  'decorative',
+  'functional',
+  'decorative'
 ] as const;
 
 export type Category = (typeof CATEGORIES)[number];
