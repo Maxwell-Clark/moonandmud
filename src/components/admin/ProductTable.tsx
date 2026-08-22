@@ -32,7 +32,7 @@ export default function ProductTable({ products }: ProductTableProps) {
 
     setDeleting(id);
     try {
-      const res = await fetch(`/api/products/${id}`, { method: 'DELETE' });
+      const res = await fetch(`/api/products/${id}/`, { method: 'DELETE' });
       if (res.ok) {
         router.refresh();
       } else {
@@ -47,7 +47,7 @@ export default function ProductTable({ products }: ProductTableProps) {
 
   async function toggleFeatured(id: string, featured: boolean) {
     try {
-      await fetch(`/api/products/${id}`, {
+      await fetch(`/api/products/${id}/`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ featured: !featured }),
@@ -61,7 +61,7 @@ export default function ProductTable({ products }: ProductTableProps) {
   async function updateQuantity(id: string, newQuantity: number) {
     const qty = Math.max(0, newQuantity);
     try {
-      await fetch(`/api/products/${id}`, {
+      await fetch(`/api/products/${id}/`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ quantity: qty }),

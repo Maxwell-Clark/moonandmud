@@ -61,7 +61,7 @@ export default function ProductForm({ product }: ProductFormProps) {
     setError(null);
 
     try {
-      const url = isEdit ? `/api/products/${product.id}` : '/api/products';
+      const url = isEdit ? `/api/products/${product.id}/` : '/api/products/';
       const method = isEdit ? 'PATCH' : 'POST';
 
       const res = await fetch(url, {
