@@ -3,8 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import ImageUpload from './ImageUpload';
-
-const CATEGORIES = ['mugs', 'bowls', 'vases', 'plates', 'planters', 'decorative'];
+import { CATEGORIES } from '@/data/products';
 
 interface ProductFormProps {
   product?: {

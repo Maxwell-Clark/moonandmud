@@ -48,37 +48,15 @@ export default async function Home() {
               Browse by Category
             </h2>
             <p className="text-brown/70 max-w-2xl mx-auto">
-              Find the perfect piece for your home from everyday cups, bowls, plates to decorative vases.
+              Find the perfect piece for your home, from everyday functional ware to decorative accents.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 max-w-2xl mx-auto">
             {[
-              { name: 'Mugs', slug: 'mugs', icon: (
+              { name: 'Functional', slug: 'functional', icon: (
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8h1a4 4 0 110 8h-1M3 8h14v9a4 4 0 01-4 4H7a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3" />
-                </svg>
-              )},
-              { name: 'Bowls', slug: 'bowls', icon: (
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12c0 4.97 4.03 9 9 9s9-4.03 9-9H3z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12c0-1.1.9-2 2-2h14a2 2 0 012 2" />
-                </svg>
-              )},
-              { name: 'Vases', slug: 'vases', icon: (
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 3h6v2a3 3 0 01-3 3 3 3 0 01-3-3V3zM7.5 8c-.5 2-1 4-1 6 0 4 2.5 7 5.5 7s5.5-3 5.5-7c0-2-.5-4-1-6h-9z" />
-                </svg>
-              )},
-              { name: 'Plates', slug: 'plates', icon: (
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <circle cx="12" cy="12" r="9" strokeWidth={1.5} />
-                  <circle cx="12" cy="12" r="5" strokeWidth={1.5} />
-                </svg>
-              )},
-              { name: 'Planters', slug: 'planters', icon: (
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 3v5M9 8l3-3 3 3M5 12h14l-2 9H7l-2-9z" />
                 </svg>
               )},
               { name: 'Decorative', slug: 'decorative', icon: (

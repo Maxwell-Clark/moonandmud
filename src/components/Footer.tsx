@@ -85,42 +85,18 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/shop?category=mugs"
+                  href="/shop?category=functional"
                   className="text-cream/70 hover:text-gold transition-colors"
                 >
-                  Mugs
+                  Functional
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/shop?category=bowls"
+                  href="/shop?category=decorative"
                   className="text-cream/70 hover:text-gold transition-colors"
                 >
-                  Bowls
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/shop?category=vases"
-                  className="text-cream/70 hover:text-gold transition-colors"
-                >
-                  Vases
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/shop?category=plates"
-                  className="text-cream/70 hover:text-gold transition-colors"
-                >
-                  Plates
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/shop?category=planters"
-                  className="text-cream/70 hover:text-gold transition-colors"
-                >
-                  Planters
+                  Decorative
                 </Link>
               </li>
             </ul>
